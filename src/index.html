@@ -6,6 +6,268 @@
     <link href="../dist/output.css" rel="stylesheet" />
     <script defer src="./assets/fontawesome/js/solid.min.js"></script>
     <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
+    <script>
+      window.onload= () =>{
+        const mobileMenuIcon = document.getElementById("mobile-menu-button");
+        mobileMenuIcon.addEventListener("click",() =>{
+          if(mobileMenuIcon.classList.contains("open")){
+            mobileMenuIcon.classList.remove("open");
+          }
+          else{
+            mobileMenuIcon.classList.add("open");
+          }
+        })
+
+        const ticketsmenuItem = document.getElementById("ticket-menu-item");
+        ticketsmenuItem.addEventListener("click",() =>{
+          if(ticketsmenuItem.classList.contains("open")){
+            ticketsmenuItem.classList.remove("open");
+          }
+          else{
+            ticketsmenuItem.classList.add("open");
+          }
+        })
+
+        const darkMondeToggle = document.getElementById("dark-mode-toggle");
+        darkMondeToggle.addEventListener("click",() =>{
+          if(document.body.classList.contains("dark")){
+            document.body.classList.remove("dark");
+          }
+          else{
+            document.body.classList.add("dark");
+          }
+        })
+      }
+    </script>
   </head>
-  <body></body>
+  <body class="dark">
+    <main class="bg-zinc-200 dark:bg-black dark:text-zinc-200 ">
+      <header class="text-zinc-200">
+        <div id="dark-mode-toggle" class="fixed z-10 top-24 right-0 inline-block w-12 cursor-pointer rounded-l-lg bg-zinc-900 dark:bg-zinc-200  text-zinc-200  dark:text-zinc-900 p-2 text-3xl ">
+
+        <i class="fa-solid fa-sun dark:hidden"></i>
+        <i class="fa-solid fa-moon hidden dark:inline-block "></i>  
+        </div>
+        <nav class="sticky flex z-10 top-0 p-2 bg-gradient-to-r from-rose-500 to-pink-500">
+          <div class="flex items-center p-2 gap-2">
+            <img src="./assets/images/logo-inverted.png" width="50" alt="">
+            <div class="font-bold text-2xl">
+              tw:<span class="text-sky-500">mf</span>
+            </div>
+          </div>
+          <div class="my-auto ml-auto pr-4 block cursor-pointer md:hidden">
+              <div id="mobile-menu-button" class="group peer">
+                <div class="w-8 h-1 bg-zinc-200 rounded-full top-0 group-open:rotate-45 transition-all group-open:top-2 relative "></div>
+                <div class=" w-8 h-1 bg-zinc-200 rounded-full   mt-1 opacity-100 group-open:opacity-0 transition-all"></div>
+                <div class="w-8 h-1 bg-zinc-200 rounded-full top-0 mt-1 group-open:-rotate-45 transition-all group-open:-top-2 relative"></div>
+              </div>
+              <div class=" absolute top-[62px] bg-gradient-to-r from-rose-500 to-pink-500 w-full left-0 peer-open:block hidden">
+                <div class="relative flex h-full items-center justify-center p-4 cursor-pointer font-bold text-pink-200 hover:text-zinc-200 hover:bg-white/10 transition-colors ease-in-out ">
+                  <span>Home</span>
+                </div>
+                <div class="relative flex h-full items-center justify-center p-4 cursor-pointer font-bold text-pink-200 hover:text-zinc-200 hover:bg-white/10 transition-colors ease-in-out ">
+                  <span>LineUp</span>
+                </div>
+                <div 
+                 id="ticket-menu-item"
+                 class="relative h-full cursor-pointer font-bold text-pink-200 hover:text-zinc-200 hover:bg-white/10 transition-colors ease-in-out  group"
+                 >
+                  <div class="p-4 text-center font-bold">Tickets</div>
+                  <div class="hidden group-open:block">
+                    <div class=" flex justify-center items-center p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition ease-in-out cursor-pointer text-pink-200">
+                      <span>Single day  Tickets</span>
+                    </div>
+                    <div class=" flex justify-center items-center p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition ease-in-out cursor-pointer text-pink-200">
+                      <span>7 days Tickets</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative flex h-full items-center justify-center p-4 cursor-pointer font-bold text-pink-200 hover:text-zinc-200 hover:bg-white/10 transition-colors ease-in-out ">
+                  <span>Support</span>
+                </div>
+              </div>
+          </div>
+          <div class="hidden flex-1 items-center justify-end md:flex">
+            <div class="menu-item">
+              <span>Home</span>
+            </div>
+            <div class="menu-item">
+              <span>LineUp</span>
+            </div>
+            <div class="menu-item group">
+              <span>Tickets</span>
+              <div class="absolute hidden top-full bg-pink-500 right-0 whitespace-nowrap rounded-b-md text-right group-hover:block">
+                <div class=" p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition ease-in-out cursor-pointer text-pink-200">
+                  <span>Single day  Tickets</span>
+                </div>
+                <div class="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition ease-in-out cursor-pointer text-pink-200">
+                  <span>7 days Tickets</span>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item">
+              <span>Support</span>
+            </div>
+          </div>
+        </nav>
+        <div 
+        style="background-image: url(./assets/images/hero.jpg);"
+        class="flex flex-col  items-center justify-center h-[calc(100vh-200px)] min-h-[400px] bg-cover bg-center bg-fixed">
+        <div class="bg-white/30 rounded-xl text-center px-4 py-2  backdrop-blur-md">
+          <div class="relative">
+            <img src="./assets/images/logo.png" width="175px" alt="">
+            <div class="flex items-center justify-center mt-[-70px] mb-5">
+              <div class="h-14 w-14 bg-pink-500 rounded-full flex items-center justify-center  gap-1">
+                <div class="h-2 w-1 bg-pink-300 rounded-full animate-wavey  " ></div>
+                <div class="h-3 w-1 bg-pink-200 rounded-full animate-wavey animation-delay-200"></div>
+                <div class="h-4 w-1 bg-pink-100 rounded-full animate-wavey animation-delay-[150ms]"></div>
+                <div class="h-3 w-1 bg-pink-200 rounded-full animate-wavey animation-delay-300 "></div>
+                <div class="h-2 w-1 bg-pink-300 rounded-full animate-wavey animation-delay-[75ms]" ></div>
+              </div>
+            </div>
+          </div>
+          <div class="text-5xl font-bold">
+            tw:<span class="text-sky-600">fm</span>
+          </div>
+        </div>
+        <div class="font-bold text-sm mt-3" >
+          keep me updated with news and promotions
+        </div>
+        <div class="flex gap-1 mt-3">
+          <input type="email" placeholder="email" class="border border-white/40 rounded-md backdrop-blur-md font-bold placeholder-zinc-500 text-sky-900 caret-pink-600 p-2 outline-pink-500" >
+          <div class="cursor-pointer rounded-md bg-pink-500 py-2 px-4 font-bold hover:bg-sky-900 transition-colors hover:shadow-lg ">
+            subscribe</div>
+        </div>
+        </div>
+      </header>
+      <div class="max-w-screen-lg mx-auto mt-20">
+        <h2 >
+          Headliners
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quasi corrupti, ullam earum, sed rem dolor sapiente minus sit commodi accusantium adipisci? 
+        </p>
+        <div class="mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto">
+          <div class="min-w-[80%] md:min-w-[40%]">
+            <div style="background-image:url(./assets//images/band1.jpg) ;" class="h-80 w-full snap-center rounded-xl bg-cover shadow-md shadow-black/20 " >
+            </div>
+            <h5 class="mt-2">Dj stuth ~ Stephan</h5>
+            <h6>1st July 9mp-Kajaga</h6>
+          </div>
+
+          <div class="min-w-[80%] md:min-w-[40%]">
+            <div style="background-image:url(./assets//images/band2.jpg) ;" class="h-80 w-full snap-center rounded-xl bg-cover shadow-md shadow-black/20 " >
+            </div>
+            <h5 class="mt-2">Masterclass ~ Ericsson</h5>
+            <h6>1st July 9mp-Kajaga</h6>
+          </div>
+
+          <div class="min-w-[80%] md:min-w-[40%]">
+            <div style="background-image:url(./assets//images/band3.jpg) ;" class="h-80 w-full snap-center rounded-xl bg-cover shadow-md shadow-black/20 " >
+            </div>
+            <h5 class="mt-2">Corduray Ericsson</h5>
+            <h6>1st July 9mp-Kajaga</h6>
+          </div>
+
+          <div class="min-w-[80%] md:min-w-[40%]">
+            <div style="background-image:url(./assets//images/band4.jpg) ;" class="h-80 w-full snap-center rounded-xl bg-cover shadow-md shadow-black/20 " >
+            </div>
+            <h5 class="mt-2">Corduray Ericsson</h5>
+            <h6>1st July 9mp-Kajaga</h6>
+          </div>
+
+          <div class="min-w-[80%] md:min-w-[40%]">
+            <div style="background-image:url(./assets//images/band5.jpg) ;" class="h-80 w-full snap-center rounded-xl bg-cover shadow-md shadow-black/20 " >
+            </div>
+            <h5 class="mt-2">Corduray Ericsson</h5>
+            <h6>1st July 9mp-Kajaga</h6>
+          </div>
+
+          <div class="min-w-[80%] md:min-w-[40%]">
+            <div style="background-image:url(./assets//images/band6.jpg) ;" class="h-80 w-full snap-center rounded-xl bg-cover shadow-md shadow-black/20 " >
+            </div>
+            <h5 class="mt-2">Corduray Ericsson</h5>
+            <h6>1st July 9mp-Kajaga</h6>
+          </div>
+
+          <div class="min-w-[80%] md:min-w-[40%]">
+            <div style="background-image:url(./assets//images/band7.jpg) ;" class="h-80 w-full snap-center rounded-xl bg-cover shadow-md shadow-black/20 " >
+            </div>
+            <h5 class="mt-2">Corduray Ericsson</h5>
+            <h6>1st July 9mp-Kajaga</h6>
+          </div>
+        </div>
+        <h2 class="mt-20">LineUp</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, aliquam neque.</p>
+        <div class="relative mt-5 rounded-lg  bg-zinc-800 py-4 px-2 text-zinc-200">
+          <div class="absolute top-0 left-1/2 w-4 h-full -ml-[8px] rounded-full bg-gradient-to-b from-sky-900 via-cyan-900 to-teal-900">
+            <div class="sticky top-1/2">
+               <div class="relative h-4 w-4">
+                <div class=" absolute animate-ping h-4 w-4 rounded-full bg-pink-500 opacity-75"></div>
+                <div class="bg-rose-500 h-4 w-4 rounded-full"></div>
+               </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-8">
+            <div>
+              <h2 class="p-2 my-4 rounded-lg bg-zinc-900 " >1st July</h2>
+            </div>
+            <div></div>
+            <div class="text-right">
+              <div class="font-bold">Ericsson Ishaka</div>
+              <div class="text-zinc-400">6pm - sage stage</div>
+            </div>
+            <div></div>
+            <div></div>
+            <div class="text-left">
+              <div class="font-bold">Ericsson Ishaka</div>
+              <div class="text-zinc-400">6pm - sage stage</div>
+            </div>
+            <div>
+              <h2 class="p-2 my-4 rounded-lg bg-zinc-900 " >2nd July</h2>
+            </div>
+            <div></div>
+            <div class="text-right">
+              <div class="font-bold">Ericsson Ishaka</div>
+              <div class="text-zinc-400">6pm - sage stage</div>
+            </div>
+            <div></div>
+            <div></div>
+            <div class="text-left">
+              <div class="font-bold">Ericsson Ishaka</div>
+              <div class="text-zinc-400">6pm - sage stage</div>
+            </div>
+          </div>       
+        </div>
+        <h2 class="mt-20">Tickets</h2>
+        <table class="mt-5 table w-full border-zinc-500 border-collapse">
+          <thead class="text-lg font-bold">
+            <td class="border border-zinc-500 p-3">Tickets</td>
+            <td class="border border-zinc-500 p-3">Price</td>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-zinc-500 border-collapse py-2 px-3">
+                Single day ticket 
+              </td>
+              <td class="border border-zinc-500 border-collapse py-2 px-3">
+                30$
+              </td>
+            </tr>
+            <tr>
+              <td class="border border-zinc-500 border-collapse py-2 px-3">
+                7 days ticket 
+              </td>
+              <td class="border border-zinc-500 border-collapse py-2 px-3">
+                100$
+              </td>
+            </tr>
+          </tbody>
+          <caption  class="caption-bottom text-2xl">
+            once they're gone,they're gone!
+          </caption>
+        </table>
+      </div>
+    </main>
+  </body>
 </html>
